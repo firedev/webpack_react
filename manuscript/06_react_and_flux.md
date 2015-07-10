@@ -395,7 +395,8 @@ export default persist(
   connect(App, NoteStore),
   storage,
   noteStorageName,
-  () => NoteStore.getState()
+  () => NoteStore.getState(),
+  NoteActions.init(storage.get(noteStorageName))
 );
 ```
 
